@@ -88,5 +88,18 @@ public class App
 //        System.out.println(4 % 3);
 //        System.out.println(4 % 2 == 0);
 
+        System.out.println(" Studying class variables(static variable..)");
+        Vehicle vehicle1 = new Vehicle();
+        vehicle1.totalCount =10;
+
+        Vehicle vehicle2 = new Vehicle();
+        vehicle2.totalCount = 20;
+        Vehicle.totalCount = 30;
+
+        System.out.println("Total vehicle count vechicle:1 " + vehicle1.totalCount);
+        System.out.println("Total vehicle count vechicle2: " + vehicle2.totalCount);
+        System.out.println("Total vehicle count Vechicle class : " + Vehicle.totalCount);
+
+
     }
 }

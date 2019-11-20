@@ -1,6 +1,8 @@
 package org.fasttrackit;
 
 public class Vehicle {
+    // class variable
+    static int totalCount;
 
     //    instance varables
     String name;
@@ -11,7 +13,11 @@ public class Vehicle {
     double travelDistance;
     boolean running;
 
-//    semnatura metodei
+    public Vehicle() {
+        totalCount++;
+    }
+
+    //    semnatura metodei
     public double accelerate(double speed, double durationInHours){
         System.out.println(name + " is accelerating with: " + speed + " for " + durationInHours + " h.");
 // local variabile, (declared inside a method)
