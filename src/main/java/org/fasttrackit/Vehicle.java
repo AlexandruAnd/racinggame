@@ -14,7 +14,7 @@ public class Vehicle {
 //    semnatura metodei
     public double accelerate(double speed, double durationInHours){
         System.out.println(name + " is accelerating with: " + speed + " for " + durationInHours + " h.");
-
+// local variabile, (declared inside a method)
         double distance = speed * durationInHours;
 
         travelDistance = travelDistance + distance;

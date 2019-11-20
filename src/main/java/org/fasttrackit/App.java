@@ -25,8 +25,8 @@ public class App
 
        carReference.engine = carEngine;
         System.out.println("Engine details...");
-        System.out.println(carReference.engine.manufacturer);
-        System.out.println(carReference.engine.capacity);
+        System.out.println("Engine is: " + carReference.engine.manufacturer);
+        System.out.println("Capacity is: " + carReference.engine.capacity);
 
         double accelationDistance = carReference.accelerate(60,1);
 
