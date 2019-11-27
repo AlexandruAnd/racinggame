@@ -19,7 +19,34 @@ public class Vehicle {
 
     //    semnatura metodei
     public double accelerate(double speed, double durationInHours){
+
+        double milageMultiplier = 1;
+
         System.out.println(name + " is accelerating with: " + speed + " for " + durationInHours + " h.");
+
+        if (speed > maxSpeed) {
+            System.out.println("Sorry. Maximum speed exceeded");
+            return 0;
+        }
+        else if (speed == maxSpeed){
+            System.out.println("Careful! Max Speed reached");
+        }
+        else {
+            System.out.println("Valid speed entered!");
+        }
+        if (fuelLevel <= 0){
+            System.out.println("You don't have enough fuel");
+            return 0;
+                    }
+
+        if (speed > 120) {
+            System.out.println("Going fast...you'll use more fuel");
+//            inceasing mileage multiplier with percenteage of acceleration speed
+            milageMultiplier = speed/100;
+
+
+        }
+
 // local variabile, (declared inside a method)
         double distance = speed * durationInHours;
 
@@ -28,11 +55,14 @@ public class Vehicle {
 //        travelDistance += distance;
         System.out.println(" Total travel distance: "+ travelDistance);
 
-        double usedFuel = distance * mileage / 100;
+        double usedFuelWithStandardMileage = distance * mileage / 100;
 
-        System.out.println(" Used fuel: " + usedFuel);
+        System.out.println(" Used fuel With Standard Milage: " + usedFuelWithStandardMileage);
 
-        fuelLevel -= usedFuel;
+        double userdFuelWithCurrentMileage = usedFuelWithStandardMileage * milageMultiplier;
+        System.out.println("Used fuel with current mileage:" + userdFuelWithCurrentMileage);
+
+        fuelLevel -= userdFuelWithCurrentMileage;
 //        ++ si --
 
         System.out.println(" Remaining fule level: " + fuelLevel);
