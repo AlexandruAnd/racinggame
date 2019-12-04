@@ -126,4 +126,18 @@ public class Vehicle {
     public void setRunning(boolean running) {
         this.running = running;
     }
+// suprascrierea la sfarsitul clasei
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                ", mileage=" + mileage +
+                ", maxSpeed=" + maxSpeed +
+                ", fuelLevel=" + fuelLevel +
+                ", travelDistance=" + travelDistance +
+                ", running=" + running +
+                '}';
+    }
+
 }
