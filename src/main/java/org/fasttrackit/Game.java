@@ -14,19 +14,46 @@ public class Game {
 
 
 
+
     public void start(){
         System.out.println("Starting Game...");
 
         initializeTraks();
         displayTracks();
 
+        Track selectedTrackFromUser = getSelectedTrackFromUser();
+
         initializeCompetitors();
+
+
+
         // enhanced "for"
         for (Vehicle vehicle : competitors){
             System.out.println("It's "+vehicle.getName() + "'s turn.");
+            double speed = getAccelerationSpeedFromUser();
+
+            vehicle.accelerate(speed);
+
+            if (vehicle.getTravelDistance() >= selectedTrackFromUser.getLenght());
 
         }
 
+
+    }
+
+    private double getAccelerationSpeedFromUser(){
+        System.out.println("Please enter acceleration speed: ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextDouble();
+
+    }
+    private Track getSelectedTrackFromUser(){
+        System.out.println("Select your track number: ");
+        Scanner scanner = new Scanner(System.in);
+        int selected = scanner.nextInt();
+        Track selectedTrack = tracks[selected - 1];
+        System.out.println("Selected track "+selectedTrack.getName());
+        return selectedTrack;
 
     }
 
@@ -34,8 +61,7 @@ public class Game {
         int playerCount = getPlayerCountFromUser();
         System.out.println("Number of players:"+ playerCount);
 
-        String vehicleName = getVehicleNameFromUser();
-        System.out.println("Name from user: " + vehicleName);
+
 
         for (int i = 1; i <= playerCount; i++){
             System.out.println("Adding player" + i);
