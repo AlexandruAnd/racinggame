@@ -44,14 +44,17 @@ public class Game {
             vehicle.accelerate(speed);
 
 
-            if (vehicle.getTravelDistance() >= selectedTrackFromUser.getLenght());
-            System.out.println(" the winner is " + vehicle.getName() +"!");
-            winnerNotKnown = true;
-            break;
+            if (vehicle.getTravelDistance() >= selectedTrackFromUser.getLenght()) {
+                System.out.println(" the winner is " + vehicle.getName() + "!");
+                winnerNotKnown = false;
+                break;
+            }
+
+            if (vehicle.getFuelLevel()<=0){
+                competitorsWhitoutFule++;
+            }
 
         }
-
-
 
     }
 
